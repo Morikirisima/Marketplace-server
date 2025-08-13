@@ -1,6 +1,8 @@
 from pydantic import BaseModel, Field, ConfigDict
 from typing import Optional
 
+
+# Создание продукта
 class ProductCreate(BaseModel):
     name: str = Field(..., min_length=2, max_length=100, description="Example: Футболка")
     price: float = Field(..., gt=0, description="Example: 849.99")
@@ -8,6 +10,7 @@ class ProductCreate(BaseModel):
     stock: int = Field(default=0, ge=0)
 
 
+# Обновление продукта
 class ProductUpdate(BaseModel):
     name: str = Field(None, min_length=2, max_length=100)
     price: float = Field(None, gt=0)
@@ -15,8 +18,9 @@ class ProductUpdate(BaseModel):
     stock: int = Field(None, ge=0)
 
 
+# Вывод продукта
 class ProductOut(BaseModel):
-    id: int
-    is_available: bool
+        id: int
+        is_available: bool
 
-    model_config = ConfigDict(from_attributes=True)
+        model_config = ConfigDict(from_attributes=True)

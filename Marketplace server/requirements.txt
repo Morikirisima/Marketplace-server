@@ -27,3 +27,6 @@ mkdocs-material==9.5.3
 pytest==7.4.4
 pytest-asyncio==0.23.5
 httpx==0.26.0
+
+# Dotevn
+python-dotenv==1.1.1
