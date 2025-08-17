@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from app.db.session import engine, Base
-from app.v1.products import router as products_router
+from app.api.v1.products import router as products_router
 from contextlib import asynccontextmanager
 import os
 

@@ -1,8 +1,5 @@
 from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession, async_sessionmaker
-from sqlalchemy.ext.declarative import declarative_base
-from dotenv import load_dotenv
 import os
-load_dotenv()
 
 
 SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL")
@@ -35,6 +32,3 @@ async def get_db() -> AsyncSession:
             raise e
         finally:
             await session.close()
-
-
-Base = declarative_base()
